@@ -21,7 +21,7 @@
         If InternetTestConecction() = True Then
             Try
                 'Hier wird überprüft ob es eine neuere Version gibt!
-                Dim Version As String = Web.DownloadString("C:\xampp\htdocs\Update\AktuelleVersion.txt")
+                Dim Version As String = Web.DownloadString("https://raw.githubusercontent.com/DavHil/Einfache-Updatefunktion/master/Einfaches-Update/AktuelleVersion.txt")
                 Version = CInt(Version)
                 If Version > CInt(lblversion.Text) Then
                     MsgBox("Ein Update wurde erkannt und Heruntergeladen")
