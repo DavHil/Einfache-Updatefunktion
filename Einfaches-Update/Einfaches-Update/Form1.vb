@@ -21,14 +21,14 @@
         If InternetTestConecction() = True Then
             Try
                 'Hier wird überprüft ob es eine neuere Version gibt!
-                Dim Version As String = Web.DownloadString("https://github.com/DavHil/Einfache-Updatefunktion/blob/master/Einfaches-Update/AktuelleVersion.txt")
+                Dim Version As String = Web.DownloadString("C:\xampp\htdocs\Update\AktuelleVersion.txt")
                 Version = CInt(Version)
                 If Version > CInt(lblversion.Text) Then
+                    MsgBox("Ein Update wurde erkannt und Heruntergeladen")
                     'Hier wird der Pfad der Neuen Exe angegeben
                     Dim Pfad As String = "https://github.com/DavHil/Einfache-Updatefunktion/blob/master/Einfaches-Update/Updatefunktion.exe"
                     'Hier wird der Pfad angeggeben wo alles abgespeichert wird
                     My.Computer.Network.DownloadFile(Pfad, Application.StartupPath & "/[Update" & Version & "]" & "Update.exe")
-                    MsgBox("Ein Update wurde erkannt und Heruntergeladen")
                     Try
 
                     Catch ex As Exception
